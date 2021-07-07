@@ -171,12 +171,12 @@
 					</div>
 
 					<!-- Controls -->
-					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					{{-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 						<span class="fa fa-arrow-left" aria-hidden="true"></span>
 					</a>
 					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
 						<span class="fa fa-arrow-right" aria-hidden="true"></span>
-					</a>
+					</a> --}}
 				</div>
 			</div>
 			<!--/ banner end -->
