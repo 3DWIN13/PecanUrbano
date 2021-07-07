@@ -24,7 +24,7 @@
 		<link href="css/style-color.css" rel="stylesheet">
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/logo/favicon.ico">
+		<link rel="shortcut icon" href="img/logo/logo.png">
 	</head>
 	
 	<body>
@@ -96,6 +96,11 @@
 								<a class="h-google" href="#"><i class="fa fa-google-plus"></i></a>
 								<a class="h-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
 							</div>
+
+
+
+               
+                           
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -645,6 +650,33 @@
 					</div>
 					<!-- copy right -->
 					<p class="copy-right">&copy; copyright 2018, All rights are reserved.</p>
+
+                    @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
+
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
 				</div>
 			</footer>
 			<!-- footer end -->
