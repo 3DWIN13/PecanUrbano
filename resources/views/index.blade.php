@@ -121,13 +121,12 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#latestalbum">Latest Album</a></li>
-								<li><a href="#featuredalbum">Featured Album</a></li>
-								<li><a href="#joinus">Join Us</a></li>
-								<li><a href="#portfolio">Portfolio</a></li>
-								<li><a href="#events">Events</a></li>
+								<li><a href="#latestalbum">Ultima Cancion</a></li>
+							
+								<li><a href="#portfolio">Videos Calientes</a></li>
+								<li><a href="#events">Noticias</a></li>
 								<li><a href="#team">Team</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li><a href="#contact">Contacto</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
@@ -565,7 +564,7 @@
 					<!-- default heading -->
 					<div class="default-heading">
 						<!-- heading -->
-						<h2>Contact Us</h2>
+						<h2>Contactanos</h2>
 					</div>
 					<div class="row">	
 						<div class="col-md-4 col-sm-4">
