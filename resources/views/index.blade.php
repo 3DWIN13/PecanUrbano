@@ -564,7 +564,7 @@
 					<!-- default heading -->
 					<div class="default-heading">
 						<!-- heading -->
-						<h2>Contactanos</h2>
+						<h2>Contacto</h2>
 					</div>
 					<div class="row">	
 						<div class="col-md-4 col-sm-4">

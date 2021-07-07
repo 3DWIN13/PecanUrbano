@@ -1128,15 +1128,22 @@ footer .copy-right {
  * Tablets 
  */
 @media (max-width: 767px){
+
+	body {
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+
 	.navbar-default .navbar-collapse {
 		border-color: rgba(0,0,0,0.15);
 		box-shadow: none;
 	}
 	
 	.navbar-default .navbar-brand {padding-top: 5px;}
-	.navbar-default .navbar-brand>img {max-width: 55px;}
+	.navbar-default .navbar-brand>img {max-width: 40px;}
 	
-	.navbar, .navbar.comeup { margin-top: 0; padding: 10px 0; background: rgba(0,0,0,0.9);}
+	.navbar, .navbar.comeup { margin-top: 0; padding: 0px 0; background: rgba(0,0,0,0.9);}
 	header .navbar-default .navbar-nav>li>a, header .navbar-default .navbar-nav>li.active>a,
 	header .navbar-default .navbar-nav>li.active>a:hover, header .navbar-default .navbar-nav>li>a:hover	{ 
 		padding-top: 8px;
@@ -1173,7 +1180,7 @@ footer .copy-right {
 	.featured .featured-item .figure p,
 	.portfolio-content .item .p-transparent,
 	.portfolio-content .item .p-hover	{
-		opacity:0.8;
+		opacity:0;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	}
 		

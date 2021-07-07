@@ -30,7 +30,8 @@ $(document).ready(function(){
 	obj.src = "../audio/Bulin 47 - Bajo Mundo (Video Oficial).mp3";
 	obj.volume = 1;
 	obj.autoPlay = true;
-	obj.preLoad = true;       
+	obj.preLoad = true; 
+	// while(obj.play()){console.log(obj.currentTime);}  
 	
 	$('#playNowBtn').click(function(e){
 		var $playNowButton = $(this);																/* button variable */
