@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Pecan Urbano</title>
     <!-- Description, Keywords and Author -->
-    <meta name="description" content="Your description">
-    <meta name="keywords" content="Your,Keywords">
-    <meta name="author" content="HimanshuGupta">
+    <meta name="description" content="Pagina dedicad al seguimiento del movimiento urbano, siempre con las ultimas actualidades">
+    <meta name="keywords" content="">
+    <meta name="author" content="Pecan Urbano">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

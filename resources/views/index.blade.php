@@ -13,88 +13,69 @@
 					<div class="carousel-caption slide-one">
 						<!-- heading -->
 					</div>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Pecan Urbano</title>
-		<!-- Description, Keywords and Author -->
-		<meta name="description" content="Your description">
-		<meta name="keywords" content="Your,Keywords">
-		<meta name="author" content="HimanshuGupta">
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<!-- Styles -->
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">	
-		<!-- Animate CSS -->
-		<link href="css/animate.min.css" rel="stylesheet">
-		<!-- Basic stylesheet -->
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<!-- Font awesome CSS -->
-		<link href="css/font-awesome.min.css" rel="stylesheet">		
-		<!-- Custom CSS -->
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/style-color.css" rel="stylesheet">
-		
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/logo/logo.png">
-	</head>
-	
-	<body>
-		
-		<!-- LOGIN -->
-		<div class="modal fade" id="bookTicket" tabindex="-1" role="dialog" aria-labelledby="BookTicket">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">LOGIN &nbsp; <small><span class="label label-success">Available</span> &nbsp; <span class="label label-danger">Not Available</span></small></h4>
-					</div>
-					<!-- form for events ticket booking -->
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-						<div class="modal-body">
-							<div class="form-group">
-								<label for="exampleInputEmail1">EMAIL</label>
-								<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            </div>
-							<div class="form-group">
-								<label for="exampleInputContact">PASSWORD</label>
-								<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-							</div>
-							
-                            @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-							<!-- link to payment gatway here -->
-							<button type="submit" class="btn btn-primary">ENTRAR</button>
-						</div>
-					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <!--/ banner end -->
+
+<!-- LOGIN -->
+<div class="modal fade" id="bookTicket" tabindex="-1" role="dialog" aria-labelledby="BookTicket">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">LOGIN &nbsp; <small><span
+							class="label label-success">Available</span> &nbsp; <span
+							class="label label-danger">Not Available</span></small></h4>
+			</div>
+			<!-- form for events ticket booking -->
+			<form method="POST" action="{{ route('login') }}">
+				@csrf
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="exampleInputEmail1">EMAIL</label>
+						<input id="email" type="email"
+							class="form-control @error('email') is-invalid @enderror" name="email"
+							value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+						@error('email')
+						<span class="invalid-feedback" role="alert">
+							<strong>{{ $message }}</strong>
+						</span>
+						@enderror
+					</div>
+					<div class="form-group">
+						<label for="exampleInputContact">PASSWORD</label>
+						<input id="password" type="password"
+							class="form-control @error('password') is-invalid @enderror"
+							name="password" required autocomplete="current-password">
+
+						@error('password')
+						<span class="invalid-feedback" role="alert">
+							<strong>{{ $message }}</strong>
+						</span>
+						@enderror
+					</div>
+
+					@if (Route::has('password.request'))
+					<a class="btn btn-link" href="{{ route('password.request') }}">
+						{{ __('Forgot Your Password?') }}
+					</a>
+					@endif
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default"
+						data-dismiss="modal">CERRAR</button>
+					<!-- link to payment gatway here -->
+					<button type="submit" class="btn btn-primary">ENTRAR</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 <!-- block for animate navigation menu -->
 <div class="nav-animate"></div>
@@ -465,9 +446,9 @@
 		<!-- default heading -->
 		<div class="default-heading">
 			<!-- heading -->
-			<h2>Contacto</h2>
+			<h2>Contact Us</h2>
 		</div>
-		<div class="row">
+		<div class="row">	
 			<div class="col-md-4 col-sm-4">
 				<!-- contact item -->
 				<div class="contact-item ">
@@ -483,7 +464,7 @@
 					<!-- big icon -->
 					<i class="fa fa-wifi"></i>
 					<!-- contact details  -->
-					<span class="contact-details">PecanUrbano@pecan.com</span>
+					<span class="contact-details">music.site@melodi.com</span>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
@@ -506,33 +487,6 @@
 						<div class="form-group">
 							<label for="name">Name</label>
 							<input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
-			<!-- events end -->
-			
-			<!-- about -->
-			
-			<!-- about end -->
-			
-			<!-- meet -->
-		
-			<!-- meet end -->
-			
-			<!-- contact -->
-			<div class="contact pad" id="contact">
-				<div class="container">
-					<!-- default heading -->
-					<div class="default-heading">
-						<!-- heading -->
-						<h2>Contacto</h2>
-					</div>
-					<div class="row">	
-						<div class="col-md-4 col-sm-4">
-							<!-- contact item -->
-							<div class="contact-item ">
-								<!-- big icon -->
-								<i class="fa fa-street-view"></i>
-								<!-- contact details  -->
-								<span class="contact-details">#30/67, 5th Street, Mega Market Circle, New Delhi - 625001</span>
-							</div>
 						</div>
 						<div class="form-group">
 							<label for="email">Email</label>
@@ -546,8 +500,7 @@
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label for="message">Message</label>
-							<textarea class="form-control" id="message" name="message" rows="9"
-								placeholder="Enter message"></textarea>
+							<textarea class="form-control" id="message" name="message" rows="9" placeholder="Enter message"></textarea>
 						</div>
 					</div>
 				</div>
@@ -555,80 +508,14 @@
 					<button type="submit" class="btn btn-lg btn-theme">Send Message</button>
 				</div>
 			</form>
-
+									
 		</div>
 
 	</div>
 </div>
 <!-- contact end -->
 
-@endsection
-			</div>
-			<!-- contact end -->
-			
-			<!-- footer -->
-			<footer>
-				<div class="container">
-					<!-- social media links -->
-					<div class="social">
-						<a class="h-facebook" href="#"><i class="fa fa-facebook"></i></a>
-						<a class="h-google" href="#"><i class="fa fa-google-plus"></i></a>
-						<a class="h-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-						<a class="h-twitter" href="#"><i class="fa fa-twitter"></i></a>
-					</div>
-					<!-- copy right -->
-					<p class="copy-right">&copy; copyright 2018, All rights are reserved.</p>
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
 
-                    @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a href="#bookTicket" class="nav-link" data-toggle="modal">{{ __('Login') }}</a>
-                            {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
-                        </li>
-                    @endif
-
-                @else
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ route('login') }}">{{ Auth::user()->name;}}</a>
-
-                        {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div> --}}
-                    </li>
-                @endguest
-				</div>
-			</footer>
-			<!-- footer end -->
-			
-			<!-- Scroll to top -->
-			<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
-			
-		</div>
-		
-		<!-- Javascript files -->
-		<!-- jQuery -->
-		<script src="js/jquery.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- WayPoints JS -->
-		<script src="js/waypoints.min.js"></script>
-		<!-- Include js plugin -->
-		<script src="js/owl.carousel.min.js"></script>
-		<!-- One Page Nav -->
-		<script src="js/jquery.nav.js"></script>
-		<!-- Respond JS for IE8 -->
-		<script src="js/respond.min.js"></script>
-		<!-- HTML5 Support for IE -->
-		<script src="js/html5shiv.js"></script>
-		<!-- Custom JS -->
-		<script src="js/custom.js"></script>
-	</body>	
-</html>
+@endsection 
