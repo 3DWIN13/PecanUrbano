@@ -29,45 +29,49 @@
 	
 	<body>
 		
-		<!-- modal for booking ticket form -->
+		<!-- LOGIN -->
 		<div class="modal fade" id="bookTicket" tabindex="-1" role="dialog" aria-labelledby="BookTicket">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Name of The Event &nbsp; <small><span class="label label-success">Available</span> &nbsp; <span class="label label-danger">Not Available</span></small></h4>
+						<h4 class="modal-title" id="myModalLabel">LOGIN &nbsp; <small><span class="label label-success">Available</span> &nbsp; <span class="label label-danger">Not Available</span></small></h4>
 					</div>
 					<!-- form for events ticket booking -->
-					<form>
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Email</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="example@mail.com">
-							</div>
+								<label for="exampleInputEmail1">EMAIL</label>
+								<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
 							<div class="form-group">
-								<label for="exampleInputContact">Contact</label>
-								<input type="text" class="form-control" id="exampleInputContact" placeholder="+91 55 5555 5555">
+								<label for="exampleInputContact">PASSWORD</label>
+								<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 							</div>
-							<div class="form-group">
-								<label for="exampleInputSeats">Number of Tickets</label>
-								<select class="form-control" id="exampleInputSeats">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</div>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox"> I accept the Terms of Service
-								</label>
-							</div>
+							
+                            @if (Route::has('password.request'))
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        @endif
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
 							<!-- link to payment gatway here -->
-							<button type="button" class="btn btn-primary">Book Now</button>
+							<button type="submit" class="btn btn-primary">ENTRAR</button>
 						</div>
 					</form>
 				</div>
@@ -633,17 +637,16 @@
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a href="#bookTicket" class="nav-link" data-toggle="modal">{{ __('Login') }}</a>
+                            {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
                         </li>
                     @endif
 
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ Auth::user()->name;}}</a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -653,7 +656,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                        </div>
+                        </div> --}}
                     </li>
                 @endguest
 				</div>
