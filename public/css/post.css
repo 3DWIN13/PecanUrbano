@@ -59,7 +59,13 @@ h2{color:#34ca78;}
  .footer-link{float:left; width:100%; background:#222222; text-align:center; padding:30px;}
  .footer-link a{color:#A9FD00; font-size:18px; text-transform:uppercase;} */
 
- .custom-content{
+.custom-content{
 	padding-top: 200px;
 	padding-bottom: 50px;
+}
+
+.fb-comments{
+    margin-top: 10px;
+    /* margin-left: 0; */
+    /* padding: 0; */
 }
