@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [PostController::class, 'index'])->name('index');
 
-Route::get('/noticias/{slug?}', function () {
-    return view('post');
-});
+Route::get('/noticias/{item}', [PostController::class, 'noticias'])->name('noticias');
+
+Route::get('/tags/{tag}',[PostController::class, 'tags'])->name('tags');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//rutas del administrador de noticias
+
+Route::resource('post', NoticiaController::class)->names('post');
+
+
+    
+
+
 

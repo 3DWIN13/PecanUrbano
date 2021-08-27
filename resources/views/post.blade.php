@@ -15,10 +15,10 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 post-title-block">
 
-                <h1 class="">Titulo del post</h1>
+                <h1 class="">{{$item->title}}</h1>
                 <ul class="list-inline">
                     <li>Nombre autor</li>
-                    <li>Publicado: 1/1/2021</li>
+                    <li>{{date('F d, Y',strtotime($item->updated_at))}}</li>
                 </ul>
                 <ul class="list-unstyled">
                     <li>Tag 1</li>
@@ -27,122 +27,57 @@
                 </ul>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12">
-                <p class="lead">
-                    Desde aca es el cuerpo del post
-                </p>
-                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
-                    ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat
-                    porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor
-                    fringilla.</p>
+               
+                
                 <div class="well ">
-                    <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg" class="img-responsive">
+                    <img src="{{Storage::url($item->picture)}}" class="img-responsive">
                 </div>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at
-                    eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem
-                    nec elit.</p>
-                <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                </blockquote>
-                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
-                    ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat
-                    porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor
-                    fringilla.</p>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at
-                    eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem
-                    nec elit.</p>
-                <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. nascetur
-                        ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo
-                        luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non
-                        metus auctor fringilla.</p>
+                {!!$item->body!!}
 
-                </blockquote>
-
-                <div class="image-block">
-                    <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg" class="img-responsive">
-                </div>
 
             </div>
+            
             <div class="col-lg-3  col-md-3 col-sm-12">
                 <div class="list-group">
                     <h2>Noticias recientes</h2>
-                    <a class="list-group-item" href="#">
+                    @foreach ($recientes as $re)
+                    <a class="list-group-item" href="{{route('noticias', $re)}}">
                         <div class="media">
                             <div class="media-left">
-                                <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg"
+                                <img src="{{Storage::url($re->picture)}}"
                                     style="width: 64px; height: 64px;">
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Media heading</h4>
-                                Cras sit amet nibh libero, in gravida nulla.
+                                <h4 class="media-heading">{{$re->title}}</h4>
+                                {!!Str::limit($re->description, 45, '...')!!}
                             </div>
                         </div>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg"
-                                    style="width: 64px; height: 64px;">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Media heading</h4>
-                                Cras sit amet nibh libero, in gravida nulla.
-                            </div>
-                        </div>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg"
-                                    style="width: 64px; height: 64px;">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Media heading</h4>
-                                Cras sit amet nibh libero, in gravida nulla.
-                            </div>
-                        </div>
-                    </a>
+                    </a>    
+                    @endforeach
+                    
+                   
                 </div>
 
                 <div class="list-group">
                     <h2>Noticias relacionadas</h2>
-                    <a class="list-group-item" href="#">
+
+                    @foreach ($rela as $rel)
+                        
+                    
+                    <a class="list-group-item" href="{{route('noticias', $rel)}}">
                         <div class="media">
                             <div class="media-left">
-                                <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg"
+                                <img src="{{Storage::url($rel->picture)}}"
                                     style="width: 64px; height: 64px;">
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Media heading</h4>
-                                Cras sit amet nibh libero, in gravida nulla.
+                                <h4 class="media-heading">{{$rel->title}}</h4>
+                                {!!Str::limit($rel->description,45, ' ...')!!}
                             </div>
                         </div>
                     </a>
-                    <a class="list-group-item" href="#">
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg"
-                                    style="width: 64px; height: 64px;">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Media heading</h4>
-                                Cras sit amet nibh libero, in gravida nulla.
-                            </div>
-                        </div>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg"
-                                    style="width: 64px; height: 64px;">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Media heading</h4>
-                                Cras sit amet nibh libero, in gravida nulla.
-                            </div>
-                        </div>
-                    </a>
+                    @endforeach
+                   
                 </div>
             </div>
         </div>

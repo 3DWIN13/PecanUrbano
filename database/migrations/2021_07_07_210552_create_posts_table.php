@@ -19,8 +19,8 @@ class CreatePostsTable extends Migration
             $table->string('title', 255);
             $table->string('slug');
             $table->string('picture');
-            $table->string('yt_video_link');
-            $table->text('body');
+            $table->longText('body');
+            $table->text('description');
             
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

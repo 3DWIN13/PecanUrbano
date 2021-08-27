@@ -23,13 +23,15 @@ class PostFactory extends Factory
      */
     public function definition()
     {
-        $user = User::inRandomOrder()->limit(1)->first();
+        //$user = User::all()->random()->id;
 
         return [
             'title' => $this->faker->text(10),
             'slug' => Str::of($this->faker->text(10))->slug(),
-            'body' => $this->faker->paragraphs(3, true),
-            'user_id' => $user->id,
+            'picture' => 'post/'.$this->faker->image('public/storage/post', 660,400,null,false),
+            'description'=>$this->faker->text(250),
+            'body' => $this->faker->paragraphs(5, true),
+            'user_id' => User::all()->first(),
         ];
     }
 }

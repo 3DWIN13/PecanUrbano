@@ -740,6 +740,25 @@ hr{
 	color: #fff;
 	font-weight: 700;
 }
+.contenedorsito{
+	z-index: 8;
+	padding: 3px 3px;
+	position: absolute;
+	bottom: 0px;
+}
+.etiquetas{
+	
+	z-index: 8;
+	background: rgba(0,0,0,0.3);
+	padding: 5px 10px;
+	font-size: 13px;
+	line-height: 26px;
+	color: #fff;
+	font-weight: 700;
+	
+  border-radius: 2em;
+	
+}
 
 .events .events-item .figure .event-location i {
 	display: inline-block;
