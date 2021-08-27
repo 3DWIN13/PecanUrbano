@@ -1,5 +1,11 @@
 @extends('layouts.layout')
 
+@section('fb-plugin')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0" nonce="Ie4cyOxX"></script>
+<meta property="fb:admins" content=""/>
+@endsection
+
 <link href="../css/post.css" rel="stylesheet">
 
 @section('content')
@@ -35,8 +41,14 @@
                 {!!$item->body!!}
 
 
+                <div class="fb-comments col-lg-12 col-md-12 col-sm-12" data-href="{{url()->current()}}" data-width="" data-numposts="5"></div>
             </div>
+<<<<<<< HEAD
             
+=======
+
+
+>>>>>>> 6c5f5ae5498392e056fae537588d81c98e5090f4
             <div class="col-lg-3  col-md-3 col-sm-12">
                 <div class="list-group">
                     <h2>Noticias recientes</h2>

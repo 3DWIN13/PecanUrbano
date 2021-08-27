@@ -4,6 +4,7 @@
 <html lang="en">
 
 <head>
+    @yield('fb-plugin')
     <meta charset="utf-8">
     <title>Pecan Urbano</title>
     <!-- Description, Keywords and Author -->
@@ -71,7 +72,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <!-- logo area -->
-                        <a class="navbar-brand" href="#home">
+                        <a class="navbar-brand" href="/#home">
                             <!-- logo image -->
                             <img class="img-responsive" src="../img/logo/logo.png" alt="" />
                         </a>
